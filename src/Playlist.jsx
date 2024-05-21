@@ -1,25 +1,54 @@
 import axios from 'axios'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams } from 'react-router-dom'
+import LoadingIcon from './LoadingIcon.jsx'
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
   let storedToken = useRef(null)
   const { id } = useParams()
+  let loading = useRef(true)
 
   const fetchTracks = useCallback(async () => {
     if (!id || !storedToken.current) return
+
+    let offset = 0 // Initial offset
+    const limit = 50 // Number of items to fetch per request
+    let allTracks = [] // Array to store all tracks
+    loading.current = true
+
     try {
-      const response = await axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
-        headers: {
-          Authorization: `Bearer ${storedToken.current}`,
-        },
-      })
-      setTracks(response.data.items)
-      console.log(response.data.items)
+      let totalItems = 0
+      let fetchedItems = 0
+
+      do {
+        const response = await axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
+          headers: {
+            Authorization: `Bearer ${storedToken.current}`,
+          },
+          params: {
+            limit,
+            offset,
+          },
+        })
+
+        const items = response.data.items
+        allTracks = allTracks.concat(items)
+
+        fetchedItems += items.length
+        totalItems = response.data.total
+
+        // Increment the offset for the next request
+        offset += limit
+      } while (fetchedItems < totalItems)
+
+      setTracks(allTracks)
+      console.log('All tracks:', allTracks)
     } catch (error) {
       console.error('Error fetching tracks:', error)
     }
+
+    loading.current = false
   }, [id])
 
   useEffect(() => {
@@ -145,30 +174,37 @@ export default function Tracks() {
       <button onClick={filterGymMusicsFromTracks}>Filter Gym Music</button>
       <button onClick={createGymPlaylist}>Create Gym Playlist</button>
       <h1>All Tracks</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Cover</th>
-            <th>Name</th>
-            <th>Artists</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tracks.map((track) => (
-            <tr key={track.track.id}>
-              <td>
-                <img
-                  src={track.track.album.images[0]?.url}
-                  alt={track.track.album.name}
-                  width="50"
-                />
-              </td>
-              <td>{track.track.name}</td>
-              <td>{track.track.artists.map((artist) => artist.name).join(', ')}</td>
+      {loading.current ? ( // Conditionally render loading icon if loading is true
+        <div>
+          <LoadingIcon />
+          <p>Loading...</p>
+        </div>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Name</th>
+              <th>Artists</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {tracks.map((track) => (
+              <tr key={track.track.id}>
+                <td>
+                  <img
+                    src={track.track.album.images[0]?.url}
+                    alt={track.track.album.name}
+                    width="50"
+                  />
+                </td>
+                <td>{track.track.name}</td>
+                <td>{track.track.artists.map((artist) => artist.name).join(', ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   )
 }
