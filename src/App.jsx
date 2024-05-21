@@ -17,7 +17,7 @@ function App() {
   const { token, setToken } = useToken()
   const [playlists, setPlaylists] = useState([])
 
-  const GetUserPlaylists = useCallback(async () => {
+  const FetchPlaylists = useCallback(async () => {
     if (!token) return
     try {
       const response = await axios.get('https://api.spotify.com/v1/me/playlists', {
@@ -68,9 +68,9 @@ function App() {
   useEffect(() => {
     if (token) {
       getProfile()
-      GetUserPlaylists()
+      FetchPlaylists()
     }
-  }, [token, getProfile, GetUserPlaylists])
+  }, [token, getProfile, FetchPlaylists])
 
   const logout = () => {
     setToken('')
@@ -81,6 +81,22 @@ function App() {
     const loginUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`
     console.log(loginUrl)
     window.location.href = loginUrl
+  }
+
+  const deletePlaylist = async (id) => {
+
+    // stop following the playlist
+    try {
+      await axios.delete(`https://api.spotify.com/v1/playlists/${id}/followers`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error) {
+      console.error('Error unfollowing playlist:', error)
+    }
+
+    FetchPlaylists()
   }
 
   return (
@@ -112,6 +128,7 @@ function App() {
                         Select
                       </div>
                     </Link>
+                    <button onClick={() => deletePlaylist(playlist.id)}>Delete</button>
                   </li>
                 ))}
               </ul>
