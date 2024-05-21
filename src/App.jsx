@@ -9,6 +9,10 @@ function App() {
   const REDIRECT_URI = 'http://localhost:5173'
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
   const RESPONSE_TYPE = 'token'
+  // scope should give access to publicly available information
+  // and to create a playlist and add tracks to that
+  const SCOPE =
+    'playlist-modify-public playlist-modify-private playlist-read-private user-read-email user-read-private'
 
   const { token, setToken } = useToken()
   const [playlists, setPlaylists] = useState([])
@@ -58,6 +62,7 @@ function App() {
     }
 
     setToken(storedToken)
+    console.log(storedToken)
   }, [setToken])
 
   useEffect(() => {
@@ -73,7 +78,8 @@ function App() {
   }
 
   const login = () => {
-    const loginUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`
+    const loginUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`
+    console.log(loginUrl)
     window.location.href = loginUrl
   }
 
@@ -93,11 +99,15 @@ function App() {
                   <li key={playlist.id} className="playlist-card">
                     <Link to={`playlist/${playlist.id}`}>
                       <div className="playlist-content">
-                        <img
-                          src={playlist.images[0].url}
-                          alt={playlist.name}
-                          className="playlist-image"
-                        />
+                        {playlist.images && playlist.images.length > 0 ? (
+                          <img
+                            src={playlist.images[0].url}
+                            alt={playlist.name}
+                            className="playlist-image"
+                          />
+                        ) : (
+                          <div className="no-image-placeholder">No Image Available</div>
+                        )}
                         <h3 className="playlist-name">{playlist.name}</h3>
                         Select
                       </div>

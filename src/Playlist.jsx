@@ -1,20 +1,18 @@
-import { useToken } from './TokenContext'
 import axios from 'axios'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
-  let { token, setToken } = useToken()
   let storedToken = useRef(null)
   const { id } = useParams()
 
   const fetchTracks = useCallback(async () => {
-    if (!id || !token) return
+    if (!id || !storedToken.current) return
     try {
       const response = await axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${storedToken.current}`,
         },
       })
       setTracks(response.data.items)
@@ -22,34 +20,31 @@ export default function Tracks() {
     } catch (error) {
       console.error('Error fetching tracks:', error)
     }
-  }, [token, id])
+  }, [id])
 
   useEffect(() => {
-    if (token) {
-      console.log('token ', token)
-      fetchTracks()
-    } else {
-      console.log('no token')
-      storedToken.current = window.localStorage.getItem('token')
-      setToken(storedToken.current)
-    }
-  }, [token, setToken, fetchTracks])
+    //Get token from storage
+    storedToken.current = window.localStorage.getItem('token')
+    fetchTracks()
+  }, [fetchTracks])
 
   const getMyProfile = async () => {
     try {
       const response = await axios.get('https://api.spotify.com/v1/me', {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${storedToken.current}`,
         },
       })
-      console.log('response ', response.data)
+      console.log('my profile ', response.data)
       return response.data.id
     } catch (error) {
       console.error('Error fetching profile:', error)
     }
   }
 
-  const filterGymMusicsFromTracks = (tracksToFilter) => {
+  const filterGymMusicsFromTracks = async () => {
+    let tracksToFilter = await getTrackAnalisys()
+
     // To do that we need to check the following features:
     /* 
     Speechiness <= 0.053
@@ -79,6 +74,7 @@ export default function Tracks() {
       return false
     })
 
+    console.log('gymMusics ', gymMusics)
     return gymMusics
   }
 
@@ -86,7 +82,6 @@ export default function Tracks() {
     // First we need to get the musics in the playlist and their corresponding analysis
     // Then we need to filter the musics that are in the gym style
     // Finally we need to create a new playlist with the musics that are in the gym style
-
     try {
       const tracksIds = tracks.map((track) => track.track.id)
       console.log('tracksIds ', tracksIds)
@@ -94,11 +89,10 @@ export default function Tracks() {
         `https://api.spotify.com/v1/audio-features?ids=${tracksIds.join(',')}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${storedToken.current}`,
           },
         }
       )
-      console.log('tracksFeatures ', response.data.audio_features)
       return response.data.audio_features
     } catch (error) {
       console.error('Error fetching track analysis:', error)
@@ -107,20 +101,21 @@ export default function Tracks() {
 
   const createGymPlaylist = async () => {
     try {
-      const trackAnalysis = await getTrackAnalisys()
-      const gymMusics = filterGymMusicsFromTracks(trackAnalysis)
+      let gymMusics = await filterGymMusicsFromTracks()
       const userId = await getMyProfile()
+
+      console.log('token aqui ', storedToken.current)
 
       const response = await axios.post(
         `https://api.spotify.com/v1/users/${userId}/playlists`,
         {
           name: 'Gym Playlist',
-          public: false,
+          public: true,
           description: 'Playlist with gym musics',
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${storedToken.current}`,
           },
         }
       )
@@ -134,7 +129,7 @@ export default function Tracks() {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${storedToken.current}`,
           },
         }
       )
@@ -147,8 +142,9 @@ export default function Tracks() {
 
   return (
     <div id="tracks">
-      <h1>Tracks</h1>
+      <button onClick={filterGymMusicsFromTracks}>Filter Gym Music</button>
       <button onClick={createGymPlaylist}>Create Gym Playlist</button>
+      <h1>All Tracks</h1>
       <table>
         <thead>
           <tr>
