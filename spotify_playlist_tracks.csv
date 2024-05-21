@@ -1,93 +1,173 @@
-Track Name,Artist,Album,Popularity,Danceability,Energy,Key,Loudness,Mode,Speechiness,Acousticness,Instrumentalness,Liveness,Valence,Tempo,Duration (ms),Time Signature
-Not Like Us,Kendrick Lamar,Not Like Us,98,0.898,0.472,1,-7.001,1,0.0776,0.0107,0,0.141,0.214,101.061,274192,4
-Type Shit,Future,WE DON'T TRUST YOU,91,0.64,0.552,2,-5.679,1,0.129,0.0215,0,0.119,0.112,144.941,228267,4
-FE!N (feat. Playboi Carti),Travis Scott,UTOPIA,93,0.569,0.882,3,-2.777,0,0.06,0.0316,0,0.142,0.201,148.038,191701,4
-redrum,21 Savage,american dream,91,0.625,0.733,2,-8.757,1,0.0488,0.00598,0.000983,0.375,0.244,172.09,270698,4
-CARNIVAL,¥$,VULTURES 1,93,0.594,0.811,1,-5.746,1,0.159,0.189,0,0.339,0.311,148.144,264324,4
-Push Ups,Drake,Push Ups,90,0.598,0.696,2,-4.789,1,0.112,0.0153,0,0.219,0.209,91.057,232774,4
-Whatever She Wants,Bryson Tiller,Whatever She Wants,89,0.803,0.512,9,-6.871,0,0.066,0.128,0,0.0928,0.435,96.02,161342,4
-Like That,Future,WE DON'T TRUST YOU,96,0.814,0.676,11,-4.67,0,0.231,0.00709,1.28e-05,0.119,0.312,162.012,267707,4
-Bandit,Don Toliver,Bandit,86,0.686,0.733,2,-5.268,1,0.0576,0.00567,0,0.246,0.141,130.095,147747,4
-First Person Shooter (feat. J. Cole),Drake,For All The Dogs,84,0.475,0.655,11,-7.342,0,0.33,0.0306,0,0.375,0.245,163.997,247444,4
-Let's Go,Key Glock,Glockoma 2 (Deluxe),80,0.654,0.636,8,-6.904,1,0.0845,0.00258,0,0.412,0.267,75.486,140107,4
-Superhero (Heroes & Villains) [with Future & Chris Brown],Metro Boomin,HEROES & VILLAINS,84,0.709,0.583,5,-5.298,0,0.204,0.138,2.97e-06,0.195,0.533,116.624,182667,4
-Yes Indeed,Lil Baby,Harder Than Ever,80,0.963,0.346,5,-9.309,0,0.53,0.0355,0,0.108,0.562,119.957,142273,4
-Boogieman,EBK Jaaybo,Boogieman,77,0.759,0.546,5,-8.159,0,0.484,0.675,0,0.591,0.651,90.059,131292,3
-soak city (do it),310babii,soak city (do it),72,0.869,0.718,9,-5.08,1,0.113,0.00784,0,0.331,0.347,101.891,114136,4
-Mmhmm,BigXthaPlug,THE BIGGEST,83,0.93,0.682,9,-8.799,1,0.331,0.028,0,0.129,0.962,126.003,119016,4
-prada dem (feat. Offset),Gunna,prada dem (feat. Offset),79,0.915,0.596,1,-4.462,0,0.0729,0.0445,0,0.108,0.64,121.992,165373,4
-You Broke My Heart,Drake,For All The Dogs Scary Hours Edition,78,0.465,0.7,10,-5.163,0,0.0893,0.203,0,0.299,0.276,120.854,230709,4
-Surround Sound (feat. 21 Savage & Baby Tate),JID,The Forever Story (Extended Version),86,0.574,0.567,7,-7.126,0,0.465,0.164,0,0.258,0.526,75.965,229938,4
-Freestyle,Lil Baby,Too Hard,81,0.877,0.516,2,-5.426,0,0.0706,0.215,0,0.143,0.255,119.996,162053,4
-hakuna matata,Gunna,One of Wun,76,0.926,0.726,5,-4.669,0,0.227,0.282,0,0.11,0.69,137.975,127853,4
-FUK SUMN,¥$,VULTURES 1,82,0.774,0.818,4,-2.825,0,0.145,0.127,0,0.0529,0.438,142.084,209577,4
-SAY MY GRACE (feat. Travis Scott),Offset,SET IT OFF,77,0.772,0.631,10,-5.082,1,0.0431,0.0648,0,0.129,0.433,121.854,173253,4
-Talk My Shit,BossMan Dlow,Mr Beat The Road,77,0.614,0.463,1,-7.052,1,0.189,0.00923,0,0.263,0.252,112.789,104471,5
-Back To Back (feat. Future & Southside),Nardo Wick,Back To Back (feat. Future & Southside),71,0.657,0.764,10,-4.58,0,0.353,0.00162,0,0.186,0.333,163.067,185094,4
-Slimed In,Future,WE DON'T TRUST YOU,75,0.749,0.403,1,-8.395,0,0.135,0.103,0.000186,0.324,0.0619,118.153,194907,4
-Free Big Meech,Skilla Baby,Free Big Meech,52,0.706,0.636,1,-5.276,1,0.102,0.0377,0,0.195,0.117,91.868,178696,4
-Bussin (with Rob49),Moneybagg Yo,Bussin (with Rob49),69,0.698,0.77,2,-3.659,1,0.174,0.00179,0,0.0895,0.0786,174.982,164571,4
-Obama Runtz (feat. Wizz Havinn),BossMan Dlow,Mr Beat The Road,61,0.743,0.721,11,-5.325,1,0.307,0.0111,0,0.105,0.304,157.965,186646,4
-Loop Hole (feat. 21 Savage),Tee Grizzley,Tee's Coney Island,74,0.746,0.549,9,-7.459,1,0.348,0.00412,1.02e-06,0.331,0.491,164.928,151182,4
-sneaky,21 Savage,american dream,73,0.742,0.685,9,-7.526,1,0.149,0.000383,0.00428,0.147,0.306,155.037,201672,4
-Wickstyle,Nardo Wick,Wickstyle,56,0.656,0.614,11,-7.523,0,0.193,5.87e-05,1.35e-05,0.114,0.23,77.012,175162,4
-02.02.99,That Mexican OT,02.02.99,71,0.848,0.63,9,-6.543,1,0.266,0.161,0,0.13,0.602,148.092,162162,4
-Shampoo,Kodak Black,Shampoo,69,0.826,0.699,1,-4.98,0,0.394,0.181,0,0.101,0.586,175.968,131213,4
-Point Em Out (with DaBaby),That Mexican OT,Point Em Out (with DaBaby),64,0.844,0.606,0,-5.609,1,0.285,0.0522,2.3e-06,0.124,0.344,165.947,133984,4
-Need It,Migos,Need It,69,0.852,0.745,11,-3.667,0,0.171,0.0313,0,0.0824,0.897,148.007,195681,4
-Glock In My Lap,21 Savage,SAVAGE MODE II,84,0.847,0.733,10,-6.439,0,0.16,0.00574,1.04e-05,0.151,0.202,130.029,193591,4
-Somethin' (feat. Sexyy Red),Nardo Wick,Somethin' (feat. Sexyy Red),66,0.749,0.717,8,-4.739,1,0.328,0.000799,0,0.16,0.36,159.987,149246,4
-Wassam Baby (feat. Lil Wayne),Rob49,Wassam Baby (feat. Lil Wayne),64,0.518,0.624,4,-4.529,1,0.245,0.00223,0.0141,0.149,0.512,175.123,133000,4
-THE REV3NGE,Joey Bada$$,THE REV3NGE,61,0.665,0.846,8,-3.874,1,0.0686,0.0205,0,0.157,0.44,130.946,147213,4
-Left Right,Big Boogie,Left Right,29,0.691,0.818,0,-4.011,1,0.276,0.023,0,0.209,0.82,140.009,196458,4
-Entrapreneur,Central Cee,Entrapreneur,66,0.773,0.65,8,-6.287,1,0.276,0.519,0,0.421,0.741,142.986,144253,4
-Daylight,Drake,For All The Dogs,69,0.566,0.564,10,-7.88,0,0.277,0.0149,0,0.104,0.0667,139.92,164143,4
-fukumean,Gunna,a Gift & a Curse,86,0.847,0.622,1,-6.747,0,0.0903,0.119,0,0.285,0.22,130.001,125040,4
-Family Freestyle,Lil Dann,Family Freestyle,58,0.613,0.685,4,-6.795,1,0.292,0.00133,0,0.296,0.289,163.994,215122,4
-500lbs,Lil Tecca,500lbs,77,0.724,0.779,7,-5.412,0,0.0807,0.098,0,0.127,0.53,123.013,144390,4
-EVERY CHANCE I GET (feat. Lil Baby & Lil Durk),DJ Khaled,KHALED KHALED,74,0.477,0.727,2,-4.053,1,0.286,0.000866,0,0.108,0.227,150.062,236524,4
-Luv 4 My Block,Sha EK,Luv 4 My Block,58,0.728,0.781,7,-5.671,1,0.365,0.254,0.000112,0.351,0.618,141.079,81515,4
-Hot (feat. Gunna),Young Thug,So Much Fun,69,0.855,0.651,0,-8.044,0,0.235,0.063,0,0.0772,0.559,111.997,193027,4
-Ambition For Cash,Key Glock,Ambition For Cash,64,0.841,0.732,7,-5.186,0,0.19,0.0115,2.18e-05,0.136,0.576,149.012,143480,4
-Flooded The Face,Lil Uzi Vert,Pink Tape,73,0.64,0.609,1,-7.714,0,0.304,0.492,2.47e-06,0.152,0.393,131.889,192727,4
-Bent,41,Bent,72,0.861,0.617,2,-7.381,1,0.291,0.401,0,0.402,0.258,124.053,170268,4
-trademark usa,Baby Keem,The Melodic Blue,70,0.615,0.6,10,-5.62,1,0.27,0.107,1.61e-06,0.283,0.0661,130.027,270671,4
-Off The Court (with Polo G & Einer Bankz),SleazyWorld Go,Off The Court (with Polo G & Einer Bankz),61,0.722,0.605,1,-7.178,1,0.327,0.0746,0,0.149,0.476,76.821,193938,4
-Johnny Dang (with Paul Wall & DRODi),That Mexican OT,Johnny Dang (with Paul Wall & DRODi),68,0.971,0.695,10,-5.253,0,0.125,0.389,0,0.107,0.696,119.971,192000,4
-UK Rap,Dave,Split Decision,72,0.922,0.674,1,-4.429,1,0.366,0.323,3.07e-06,0.128,0.726,140.065,198027,4
-Peaches & Eggplants (feat. Latto & Sexyy Red),Young Nudy,Peaches & Eggplants (feat. Latto & Sexyy Red),63,0.908,0.561,4,-7.683,0,0.301,0.00933,0,0.111,0.559,146.018,217213,4
-On BS,Drake,Her Loss,74,0.842,0.367,9,-7.273,1,0.643,0.017,0,0.159,0.363,157.996,261544,4
-Cut U Off,Joyner Lucas,Cut U Off,59,0.781,0.664,1,-6.617,0,0.144,0.106,0,0.117,0.666,155.025,204387,4
-Keep It Low (feat. Future),Moneybagg Yo,Hard To Love,65,0.786,0.719,1,-4.675,1,0.0745,0.0156,0,0.178,0.136,154.881,142452,4
-Pull Up (feat. 21 Savage),Toosii,NAUJOUR,67,0.934,0.523,1,-7.116,1,0.327,0.18,1.32e-06,0.163,0.483,124.986,133000,4
-Go Hard,Lil Baby,Go Hard,67,0.849,0.581,6,-5.464,0,0.261,0.0178,0,0.092,0.274,142.015,217610,4
-Greatness,Quavo,Greatness,59,0.816,0.716,1,-2.896,1,0.0539,0.0778,0.000207,0.139,0.914,139.952,185001,4
-Low Down,Lil Baby,My Turn (Deluxe),76,0.962,0.619,10,-5.562,0,0.405,0.0354,0,0.083,0.154,127.956,144652,4
-Motion God,Moneybagg Yo,Motion God,12,0.857,0.679,11,-7.866,1,0.305,0.0217,0,0.112,0.693,155.026,143148,4
-Watch This - ARIZONATEARS Pluggnb Remix,Lil Uzi Vert,Watch This (ARIZONATEARS Pluggnb Remix),78,0.686,0.897,11,-7.18,0,0.0386,0.0103,0.103,0.153,0.355,129.975,163139,4
-Mo Bamba,Sheck Wes,MUDBOY,77,0.729,0.625,4,-5.266,1,0.0315,0.194,0.00986,0.248,0.261,146.034,183907,4
-Just Wanna Rock,Lil Uzi Vert,Just Wanna Rock,76,0.486,0.545,11,-7.924,1,0.0336,0.0652,0.00474,0.0642,0.0385,150.187,123891,4
-Not Finished,Lil Baby,It's Only Me,65,0.788,0.543,10,-6.692,0,0.148,0.018,0,0.326,0.0979,142.012,163454,4
-Mad Max,Lil Durk,Lil Durk Presents: Loyal Bros 2,64,0.904,0.635,5,-8.744,0,0.233,0.0174,0,0.0919,0.624,150.009,153600,4
-Private Landing (feat. Justin Bieber & Future),Don Toliver,Love Sick,80,0.858,0.641,1,-4.31,0,0.0954,0.111,2.12e-05,0.109,0.445,136.991,238253,4
-Vette Motors,YoungBoy Never Broke Again,Vette Motors,0,0.83,0.644,10,-5.431,0,0.407,0.0298,0,0.11,0.227,155.103,173419,4
-Sleazy Flow (with Lil Baby) - Remix,SleazyWorld Go,Sleazy Flow (Remix),64,0.869,0.298,2,-12.076,1,0.386,0.2,0,0.0753,0.178,77.47,161355,4
-Ski,Young Stoner Life,Slime Language 2,65,0.953,0.621,8,-7.638,0,0.221,0.017,0,0.0398,0.883,123.016,152333,4
-Sky,Playboi Carti,Whole Lotta Red,82,0.785,0.903,2,-4.184,1,0.21,0.258,0,0.169,0.565,139.98,193234,4
-family ties (with Kendrick Lamar),Baby Keem,The Melodic Blue,83,0.711,0.611,1,-5.453,1,0.33,0.00588,0,0.23,0.144,134.093,252262,4
-AHHH HA,Lil Durk,7220,60,0.676,0.61,1,-9.185,1,0.273,0.000114,1.73e-06,0.191,0.519,156.005,186538,4
-I'M ON ONE (feat. Drake),Future,I NEVER LIKED YOU,56,0.773,0.707,11,-5.71,1,0.0568,0.0103,1.04e-05,0.296,0.113,76.977,236187,4
-Time Today,Moneybagg Yo,Time Today,0,0.909,0.617,1,-7.736,1,0.401,0.044,0,0.233,0.301,136.924,136939,4
-On Me,Lil Baby,On Me,74,0.856,0.564,6,-6.295,0,0.392,0.00327,0,0.134,0.483,77.972,135960,4
-Rumors (feat. Lil Durk),Gucci Mane,Rumors (feat. Lil Durk),64,0.688,0.842,2,-4.211,1,0.264,0.0499,0,0.241,0.416,159.897,185856,4
-Super Gremlin,Kodak Black,Sniper Gang Presents Syko Bob & Snapkatt: Nightmare Babies,70,0.825,0.414,2,-6.634,1,0.144,0.00265,0,0.357,0.106,72.993,200548,4
-We Set The Trends (feat. Migos & ‎Juelz Santana) - Remix,Jim Jones,We Set The Trends (Remix) [feat. ‎Migos & Juelz Santana],55,0.801,0.794,6,-4.674,0,0.315,0.0771,0,0.204,0.757,119.044,217815,4
-Headshot (feat. Polo G & Fivio Foreign),Lil Tjay,Headshot,1,0.809,0.638,1,-7.268,0,0.257,0.0758,0,0.15,0.392,117.982,144349,4
-Back in Blood (feat. Lil Durk),Pooh Shiesty,Back In Blood (feat. Lil Durk),67,0.759,0.538,8,-8.256,0,0.384,0.151,0,0.126,0.831,146.933,184490,4
-Masterpiece,DaBaby,Masterpiece,64,0.781,0.726,0,-4.213,1,0.0836,0.0299,0,0.093,0.436,139.988,181714,4
-Runnin,21 Savage,SAVAGE MODE II,83,0.819,0.626,10,-4.574,0,0.202,0.00748,0.101,0.167,0.415,143.01,195906,4
-"WHATS POPPIN (feat. DaBaby, Tory Lanez & Lil Wayne) - Remix",Jack Harlow,"WHATS POPPIN (feat. DaBaby, Tory Lanez & Lil Wayne) [Remix]",69,0.904,0.723,11,-5.224,0,0.26,0.0631,0,0.185,0.835,145.013,227478,4
-DOLLAZ ON MY HEAD (feat. Young Thug),Gunna,WUNNA,71,0.825,0.458,0,-7.47,1,0.0577,0.114,0,0.102,0.161,145.115,197760,4
-We Paid (feat. 42 Dugg),Lil Baby,My Turn (Deluxe),73,0.926,0.542,1,-5.064,1,0.293,0.135,0,0.0877,0.564,135.14,181929,4
-Turks (feat. Travis Scott),NAV,Turks,62,0.893,0.618,7,-4.425,0,0.112,0.0827,0,0.542,0.389,119.099,161377,4
-Never Sleep (with Lil Baby feat. Travis Scott),NAV,Never Sleep,63,0.819,0.651,1,-5.829,1,0.169,0.00639,0,0.122,0.501,139.957,185786,4
+Track Name,Artist,Album,Popularity,Danceability,Energy,Key,Loudness,Mode,Speechiness,Acousticness,Instrumentalness,Liveness,Valence,Tempo,Duration (ms),Time Signature,label
+Not Like Us,Kendrick Lamar,Not Like Us,98,0.898,0.472,1,-7.001,1,0.0776,0.0107,0,0.141,0.214,101.061,274192,4,yes
+Type Shit,Future,WE DON'T TRUST YOU,91,0.64,0.552,2,-5.679,1,0.129,0.0215,0,0.119,0.112,144.941,228267,4,yes
+FE!N (feat. Playboi Carti),Travis Scott,UTOPIA,93,0.569,0.882,3,-2.777,0,0.06,0.0316,0,0.142,0.201,148.038,191701,4,yes
+redrum,21 Savage,american dream,91,0.625,0.733,2,-8.757,1,0.0488,0.00598,0.000983,0.375,0.244,172.09,270698,4,yes
+CARNIVAL,¥$,VULTURES 1,93,0.594,0.811,1,-5.746,1,0.159,0.189,0,0.339,0.311,148.144,264324,4,yes
+Push Ups,Drake,Push Ups,90,0.598,0.696,2,-4.789,1,0.112,0.0153,0,0.219,0.209,91.057,232774,4,yes
+Whatever She Wants,Bryson Tiller,Whatever She Wants,89,0.803,0.512,9,-6.871,0,0.066,0.128,0,0.0928,0.435,96.02,161342,4,yes
+Like That,Future,WE DON'T TRUST YOU,96,0.814,0.676,11,-4.67,0,0.231,0.00709,1.28e-05,0.119,0.312,162.012,267707,4,yes
+Bandit,Don Toliver,Bandit,86,0.686,0.733,2,-5.268,1,0.0576,0.00567,0,0.246,0.141,130.095,147747,4,yes
+First Person Shooter (feat. J. Cole),Drake,For All The Dogs,84,0.475,0.655,11,-7.342,0,0.33,0.0306,0,0.375,0.245,163.997,247444,4,yes
+Let's Go,Key Glock,Glockoma 2 (Deluxe),80,0.654,0.636,8,-6.904,1,0.0845,0.00258,0,0.412,0.267,75.486,140107,4,yes
+Superhero (Heroes & Villains) [with Future & Chris Brown],Metro Boomin,HEROES & VILLAINS,84,0.709,0.583,5,-5.298,0,0.204,0.138,2.97e-06,0.195,0.533,116.624,182667,4,yes
+Yes Indeed,Lil Baby,Harder Than Ever,80,0.963,0.346,5,-9.309,0,0.53,0.0355,0,0.108,0.562,119.957,142273,4,yes
+Boogieman,EBK Jaaybo,Boogieman,77,0.759,0.546,5,-8.159,0,0.484,0.675,0,0.591,0.651,90.059,131292,3,yes
+soak city (do it),310babii,soak city (do it),72,0.869,0.718,9,-5.08,1,0.113,0.00784,0,0.331,0.347,101.891,114136,4,yes
+Mmhmm,BigXthaPlug,THE BIGGEST,83,0.93,0.682,9,-8.799,1,0.331,0.028,0,0.129,0.962,126.003,119016,4,yes
+prada dem (feat. Offset),Gunna,prada dem (feat. Offset),79,0.915,0.596,1,-4.462,0,0.0729,0.0445,0,0.108,0.64,121.992,165373,4,yes
+You Broke My Heart,Drake,For All The Dogs Scary Hours Edition,78,0.465,0.7,10,-5.163,0,0.0893,0.203,0,0.299,0.276,120.854,230709,4,yes
+Surround Sound (feat. 21 Savage & Baby Tate),JID,The Forever Story (Extended Version),86,0.574,0.567,7,-7.126,0,0.465,0.164,0,0.258,0.526,75.965,229938,4,yes
+Freestyle,Lil Baby,Too Hard,81,0.877,0.516,2,-5.426,0,0.0706,0.215,0,0.143,0.255,119.996,162053,4,yes
+hakuna matata,Gunna,One of Wun,76,0.926,0.726,5,-4.669,0,0.227,0.282,0,0.11,0.69,137.975,127853,4,yes
+FUK SUMN,¥$,VULTURES 1,82,0.774,0.818,4,-2.825,0,0.145,0.127,0,0.0529,0.438,142.084,209577,4,yes
+SAY MY GRACE (feat. Travis Scott),Offset,SET IT OFF,77,0.772,0.631,10,-5.082,1,0.0431,0.0648,0,0.129,0.433,121.854,173253,4,yes
+Talk My Shit,BossMan Dlow,Mr Beat The Road,77,0.614,0.463,1,-7.052,1,0.189,0.00923,0,0.263,0.252,112.789,104471,5,yes
+Back To Back (feat. Future & Southside),Nardo Wick,Back To Back (feat. Future & Southside),71,0.657,0.764,10,-4.58,0,0.353,0.00162,0,0.186,0.333,163.067,185094,4,yes
+Slimed In,Future,WE DON'T TRUST YOU,75,0.749,0.403,1,-8.395,0,0.135,0.103,0.000186,0.324,0.0619,118.153,194907,4,yes
+Free Big Meech,Skilla Baby,Free Big Meech,52,0.706,0.636,1,-5.276,1,0.102,0.0377,0,0.195,0.117,91.868,178696,4,yes
+Bussin (with Rob49),Moneybagg Yo,Bussin (with Rob49),69,0.698,0.77,2,-3.659,1,0.174,0.00179,0,0.0895,0.0786,174.982,164571,4,yes
+Obama Runtz (feat. Wizz Havinn),BossMan Dlow,Mr Beat The Road,61,0.743,0.721,11,-5.325,1,0.307,0.0111,0,0.105,0.304,157.965,186646,4,yes
+Loop Hole (feat. 21 Savage),Tee Grizzley,Tee's Coney Island,74,0.746,0.549,9,-7.459,1,0.348,0.00412,1.02e-06,0.331,0.491,164.928,151182,4,yes
+sneaky,21 Savage,american dream,73,0.742,0.685,9,-7.526,1,0.149,0.000383,0.00428,0.147,0.306,155.037,201672,4,yes
+Wickstyle,Nardo Wick,Wickstyle,56,0.656,0.614,11,-7.523,0,0.193,5.87e-05,1.35e-05,0.114,0.23,77.012,175162,4,yes
+02.02.99,That Mexican OT,02.02.99,71,0.848,0.63,9,-6.543,1,0.266,0.161,0,0.13,0.602,148.092,162162,4,yes
+Shampoo,Kodak Black,Shampoo,69,0.826,0.699,1,-4.98,0,0.394,0.181,0,0.101,0.586,175.968,131213,4,yes
+Point Em Out (with DaBaby),That Mexican OT,Point Em Out (with DaBaby),64,0.844,0.606,0,-5.609,1,0.285,0.0522,2.3e-06,0.124,0.344,165.947,133984,4,yes
+Need It,Migos,Need It,69,0.852,0.745,11,-3.667,0,0.171,0.0313,0,0.0824,0.897,148.007,195681,4,yes
+Glock In My Lap,21 Savage,SAVAGE MODE II,84,0.847,0.733,10,-6.439,0,0.16,0.00574,1.04e-05,0.151,0.202,130.029,193591,4,yes
+Somethin' (feat. Sexyy Red),Nardo Wick,Somethin' (feat. Sexyy Red),66,0.749,0.717,8,-4.739,1,0.328,0.000799,0,0.16,0.36,159.987,149246,4,yes
+Wassam Baby (feat. Lil Wayne),Rob49,Wassam Baby (feat. Lil Wayne),64,0.518,0.624,4,-4.529,1,0.245,0.00223,0.0141,0.149,0.512,175.123,133000,4,yes
+THE REV3NGE,Joey Bada$$,THE REV3NGE,61,0.665,0.846,8,-3.874,1,0.0686,0.0205,0,0.157,0.44,130.946,147213,4,yes
+Left Right,Big Boogie,Left Right,29,0.691,0.818,0,-4.011,1,0.276,0.023,0,0.209,0.82,140.009,196458,4,yes
+Entrapreneur,Central Cee,Entrapreneur,66,0.773,0.65,8,-6.287,1,0.276,0.519,0,0.421,0.741,142.986,144253,4,yes
+Daylight,Drake,For All The Dogs,69,0.566,0.564,10,-7.88,0,0.277,0.0149,0,0.104,0.0667,139.92,164143,4,yes
+fukumean,Gunna,a Gift & a Curse,86,0.847,0.622,1,-6.747,0,0.0903,0.119,0,0.285,0.22,130.001,125040,4,yes
+Family Freestyle,Lil Dann,Family Freestyle,58,0.613,0.685,4,-6.795,1,0.292,0.00133,0,0.296,0.289,163.994,215122,4,yes
+500lbs,Lil Tecca,500lbs,77,0.724,0.779,7,-5.412,0,0.0807,0.098,0,0.127,0.53,123.013,144390,4,yes
+EVERY CHANCE I GET (feat. Lil Baby & Lil Durk),DJ Khaled,KHALED KHALED,74,0.477,0.727,2,-4.053,1,0.286,0.000866,0,0.108,0.227,150.062,236524,4,yes
+Luv 4 My Block,Sha EK,Luv 4 My Block,58,0.728,0.781,7,-5.671,1,0.365,0.254,0.000112,0.351,0.618,141.079,81515,4,yes
+Hot (feat. Gunna),Young Thug,So Much Fun,69,0.855,0.651,0,-8.044,0,0.235,0.063,0,0.0772,0.559,111.997,193027,4,yes
+Ambition For Cash,Key Glock,Ambition For Cash,64,0.841,0.732,7,-5.186,0,0.19,0.0115,2.18e-05,0.136,0.576,149.012,143480,4,yes
+Flooded The Face,Lil Uzi Vert,Pink Tape,73,0.64,0.609,1,-7.714,0,0.304,0.492,2.47e-06,0.152,0.393,131.889,192727,4,yes
+Bent,41,Bent,72,0.861,0.617,2,-7.381,1,0.291,0.401,0,0.402,0.258,124.053,170268,4,yes
+trademark usa,Baby Keem,The Melodic Blue,70,0.615,0.6,10,-5.62,1,0.27,0.107,1.61e-06,0.283,0.0661,130.027,270671,4,yes
+Off The Court (with Polo G & Einer Bankz),SleazyWorld Go,Off The Court (with Polo G & Einer Bankz),61,0.722,0.605,1,-7.178,1,0.327,0.0746,0,0.149,0.476,76.821,193938,4,yes
+Johnny Dang (with Paul Wall & DRODi),That Mexican OT,Johnny Dang (with Paul Wall & DRODi),68,0.971,0.695,10,-5.253,0,0.125,0.389,0,0.107,0.696,119.971,192000,4,yes
+UK Rap,Dave,Split Decision,72,0.922,0.674,1,-4.429,1,0.366,0.323,3.07e-06,0.128,0.726,140.065,198027,4,yes
+Peaches & Eggplants (feat. Latto & Sexyy Red),Young Nudy,Peaches & Eggplants (feat. Latto & Sexyy Red),63,0.908,0.561,4,-7.683,0,0.301,0.00933,0,0.111,0.559,146.018,217213,4,yes
+On BS,Drake,Her Loss,74,0.842,0.367,9,-7.273,1,0.643,0.017,0,0.159,0.363,157.996,261544,4,yes
+Cut U Off,Joyner Lucas,Cut U Off,59,0.781,0.664,1,-6.617,0,0.144,0.106,0,0.117,0.666,155.025,204387,4,yes
+Keep It Low (feat. Future),Moneybagg Yo,Hard To Love,65,0.786,0.719,1,-4.675,1,0.0745,0.0156,0,0.178,0.136,154.881,142452,4,yes
+Pull Up (feat. 21 Savage),Toosii,NAUJOUR,67,0.934,0.523,1,-7.116,1,0.327,0.18,1.32e-06,0.163,0.483,124.986,133000,4,yes
+Go Hard,Lil Baby,Go Hard,67,0.849,0.581,6,-5.464,0,0.261,0.0178,0,0.092,0.274,142.015,217610,4,yes
+Greatness,Quavo,Greatness,59,0.816,0.716,1,-2.896,1,0.0539,0.0778,0.000207,0.139,0.914,139.952,185001,4,yes
+Low Down,Lil Baby,My Turn (Deluxe),76,0.962,0.619,10,-5.562,0,0.405,0.0354,0,0.083,0.154,127.956,144652,4,yes
+Motion God,Moneybagg Yo,Motion God,12,0.857,0.679,11,-7.866,1,0.305,0.0217,0,0.112,0.693,155.026,143148,4,yes
+Watch This - ARIZONATEARS Pluggnb Remix,Lil Uzi Vert,Watch This (ARIZONATEARS Pluggnb Remix),78,0.686,0.897,11,-7.18,0,0.0386,0.0103,0.103,0.153,0.355,129.975,163139,4,yes
+Mo Bamba,Sheck Wes,MUDBOY,77,0.729,0.625,4,-5.266,1,0.0315,0.194,0.00986,0.248,0.261,146.034,183907,4,yes
+Just Wanna Rock,Lil Uzi Vert,Just Wanna Rock,76,0.486,0.545,11,-7.924,1,0.0336,0.0652,0.00474,0.0642,0.0385,150.187,123891,4,yes
+Not Finished,Lil Baby,It's Only Me,65,0.788,0.543,10,-6.692,0,0.148,0.018,0,0.326,0.0979,142.012,163454,4,yes
+Mad Max,Lil Durk,Lil Durk Presents: Loyal Bros 2,64,0.904,0.635,5,-8.744,0,0.233,0.0174,0,0.0919,0.624,150.009,153600,4,yes
+Private Landing (feat. Justin Bieber & Future),Don Toliver,Love Sick,80,0.858,0.641,1,-4.31,0,0.0954,0.111,2.12e-05,0.109,0.445,136.991,238253,4,yes
+Vette Motors,YoungBoy Never Broke Again,Vette Motors,0,0.83,0.644,10,-5.431,0,0.407,0.0298,0,0.11,0.227,155.103,173419,4,yes
+Sleazy Flow (with Lil Baby) - Remix,SleazyWorld Go,Sleazy Flow (Remix),64,0.869,0.298,2,-12.076,1,0.386,0.2,0,0.0753,0.178,77.47,161355,4,yes
+Ski,Young Stoner Life,Slime Language 2,65,0.953,0.621,8,-7.638,0,0.221,0.017,0,0.0398,0.883,123.016,152333,4,yes
+Sky,Playboi Carti,Whole Lotta Red,82,0.785,0.903,2,-4.184,1,0.21,0.258,0,0.169,0.565,139.98,193234,4,yes
+family ties (with Kendrick Lamar),Baby Keem,The Melodic Blue,83,0.711,0.611,1,-5.453,1,0.33,0.00588,0,0.23,0.144,134.093,252262,4,yes
+AHHH HA,Lil Durk,7220,60,0.676,0.61,1,-9.185,1,0.273,0.000114,1.73e-06,0.191,0.519,156.005,186538,4,yes
+I'M ON ONE (feat. Drake),Future,I NEVER LIKED YOU,56,0.773,0.707,11,-5.71,1,0.0568,0.0103,1.04e-05,0.296,0.113,76.977,236187,4,yes
+Time Today,Moneybagg Yo,Time Today,0,0.909,0.617,1,-7.736,1,0.401,0.044,0,0.233,0.301,136.924,136939,4,yes
+On Me,Lil Baby,On Me,74,0.856,0.564,6,-6.295,0,0.392,0.00327,0,0.134,0.483,77.972,135960,4,yes
+Rumors (feat. Lil Durk),Gucci Mane,Rumors (feat. Lil Durk),64,0.688,0.842,2,-4.211,1,0.264,0.0499,0,0.241,0.416,159.897,185856,4,yes
+Super Gremlin,Kodak Black,Sniper Gang Presents Syko Bob & Snapkatt: Nightmare Babies,70,0.825,0.414,2,-6.634,1,0.144,0.00265,0,0.357,0.106,72.993,200548,4,yes
+We Set The Trends (feat. Migos & ‎Juelz Santana) - Remix,Jim Jones,We Set The Trends (Remix) [feat. ‎Migos & Juelz Santana],55,0.801,0.794,6,-4.674,0,0.315,0.0771,0,0.204,0.757,119.044,217815,4,yes
+Headshot (feat. Polo G & Fivio Foreign),Lil Tjay,Headshot,1,0.809,0.638,1,-7.268,0,0.257,0.0758,0,0.15,0.392,117.982,144349,4,yes
+Back in Blood (feat. Lil Durk),Pooh Shiesty,Back In Blood (feat. Lil Durk),67,0.759,0.538,8,-8.256,0,0.384,0.151,0,0.126,0.831,146.933,184490,4,yes
+Masterpiece,DaBaby,Masterpiece,64,0.781,0.726,0,-4.213,1,0.0836,0.0299,0,0.093,0.436,139.988,181714,4,yes
+Runnin,21 Savage,SAVAGE MODE II,83,0.819,0.626,10,-4.574,0,0.202,0.00748,0.101,0.167,0.415,143.01,195906,4,yes
+"WHATS POPPIN (feat. DaBaby, Tory Lanez & Lil Wayne) - Remix",Jack Harlow,"WHATS POPPIN (feat. DaBaby, Tory Lanez & Lil Wayne) [Remix]",69,0.904,0.723,11,-5.224,0,0.26,0.0631,0,0.185,0.835,145.013,227478,4,yes
+DOLLAZ ON MY HEAD (feat. Young Thug),Gunna,WUNNA,71,0.825,0.458,0,-7.47,1,0.0577,0.114,0,0.102,0.161,145.115,197760,4,yes
+We Paid (feat. 42 Dugg),Lil Baby,My Turn (Deluxe),73,0.926,0.542,1,-5.064,1,0.293,0.135,0,0.0877,0.564,135.14,181929,4,yes
+Turks (feat. Travis Scott),NAV,Turks,62,0.893,0.618,7,-4.425,0,0.112,0.0827,0,0.542,0.389,119.099,161377,4,yes
+Never Sleep (with Lil Baby feat. Travis Scott),NAV,Never Sleep,63,0.819,0.651,1,-5.829,1,0.169,0.00639,0,0.122,0.501,139.957,185786,4,yes
+I Remember Everything (feat. Kacey Musgraves),Zach Bryan,Zach Bryan,91,0.429,0.453,0,-7.746,1,0.0459,0.554,2e-06,0.102,0.155,77.639,227196,4,no
+Water,Tyla,Water,90,0.673,0.722,3,-3.495,0,0.0755,0.0856,0,0.137,0.519,117.187,200256,4,no
+Another Love,Tom Odell,Long Way Down (Deluxe),89,0.445,0.537,4,-8.532,0,0.04,0.695,1.65e-05,0.0944,0.131,122.769,244360,4,no
+Daylight,David Kushner,Daylight,89,0.508,0.43,2,-9.475,0,0.0335,0.83,0.000441,0.093,0.324,130.09,212954,4,no
+Until I Found You (with Em Beihold) - Em Beihold Version,Stephen Sanchez,Until I Found You (Em Beihold Version),86,0.551,0.55,10,-5.339,1,0.0286,0.777,0,0.202,0.342,101.19,176440,3,no
+i am not who i was,Chance Peña,i am not who i was,84,0.697,0.22,0,-13.696,1,0.042,0.703,0,0.0891,0.194,129.966,145438,4,no
+ceilings,Lizzy McAlpine,five seconds flat,83,0.516,0.322,9,-11.762,1,0.0292,0.473,0.00194,0.215,0.261,148.005,182888,3,no
+In The Stars,Benson Boone,In The Stars,82,0.362,0.54,10,-6.031,1,0.0528,0.338,0,0.139,0.3,78.007,216410,3,no
+Those Eyes,New West,Those Eyes,80,0.594,0.348,4,-8.297,1,0.0285,0.709,2.12e-05,0.317,0.248,120.048,220750,3,no
+the grudge,Olivia Rodrigo,GUTS,78,0.511,0.313,10,-9.32,1,0.0846,0.905,0,0.0832,0.331,126.962,189386,4,no
+Used To Be Young,Miley Cyrus,Endless Summer Vacation,77,0.626,0.63,4,-3.834,1,0.0377,0.582,0,0.13,0.421,147.029,191186,4,no
+If You Love Her,Forest Blakk,If You Love Her,75,0.286,0.445,6,-8.087,1,0.0347,0.355,0,0.114,0.278,50.827,217352,4,no
+Vem Desestressar,MC PH,Vem Desestressar,75,0.761,0.543,3,-7.717,0,0.0509,0.366,0,0.285,0.541,123.936,240000,4,no
+Black Friday,Tom Odell,Black Friday,75,0.48,0.199,6,-12.398,1,0.0329,0.931,0.0563,0.0978,0.201,165.476,221510,4,no
+Something Better,Minke,Something Better,0,0.53,0.411,2,-6.422,1,0.0328,0.589,0,0.106,0.193,103.409,213962,4,no
+No Matter What,Calum Scott,No Matter What,47,0.49,0.29,10,-7.846,1,0.0298,0.901,0,0.105,0.287,134.757,236525,4,no
+Before You,Benson Boone,Before You,75,0.269,0.373,8,-7.113,0,0.0371,0.15,0,0.129,0.321,202.899,187941,3,no
+Tummy Hurts,Reneé Rapp,Snow Angel,73,0.61,0.686,4,-5.821,1,0.265,0.764,6.99e-06,0.117,0.481,149.759,168978,3,no
+Lover (Remix) [feat. Shawn Mendes],Taylor Swift,Lover (Remix) [feat. Shawn Mendes],70,0.448,0.603,7,-7.176,1,0.064,0.433,0,0.0862,0.422,205.272,221307,3,no
+Everyday Life,Coldplay,Everyday Life,46,0.512,0.452,2,-8.991,1,0.0292,0.775,0.0818,0.065,0.235,124.103,258533,4,no
+Oeste,Valter Lobo,Mediterrâneo,40,0.745,0.382,7,-10.761,0,0.0332,0.254,4.56e-05,0.148,0.516,120.034,269663,4,no
+The Alcott (feat. Taylor Swift),The National,First Two Pages of Frankenstein,69,0.366,0.47,0,-10.57,1,0.031,0.817,0.00206,0.108,0.429,156.037,267773,3,no
+At My Worst,Pink Sweat$,The Prelude,69,0.813,0.415,0,-5.926,1,0.0349,0.777,0,0.131,0.667,91.921,170345,4,no
+conversations,Jodré,conversations,32,0.693,0.225,3,-10.86,1,0.0307,0.856,0,0.122,0.17,141.966,186413,3,no
+Mariella,Khruangbin,Texas Moon,69,0.593,0.576,2,-10.331,1,0.032,0.526,0.718,0.0827,0.559,109.935,310554,4,no
+The Feels,Labrinth,Ends & Begins,68,0.389,0.529,2,-5.763,1,0.0584,0.266,0,0.119,0.424,110.183,197466,4,no
+See The Light,Stephen Sanchez,Easy On My Eyes,66,0.728,0.796,4,-5.33,1,0.0461,0.162,9.28e-06,0.196,0.691,117.925,180147,4,no
+Peter Pan Was Right,Anson Seabra,Peter Pan Was Right,66,0.661,0.517,5,-7.74,1,0.0406,0.223,0,0.116,0.241,84.014,192498,4,no
+That Part,Lauren Spencer Smith,That Part,65,0.655,0.436,5,-8.686,1,0.0328,0.159,0,0.0978,0.374,116.938,174053,4,no
+A Beautiful Life (From the Netflix Film ‘A Beautiful Life’),Christopher,A Beautiful Life (Music From The Netflix Film),65,0.443,0.314,11,-9.06,1,0.0339,0.685,0,0.118,0.369,110.792,218000,3,no
+Wicked Games (feat. Anna Naklab) - Radio Edit,Parra for Cuva,Wicked Games (feat. Anna Naklab) [Radio Edit],65,0.801,0.641,11,-8.584,1,0.0455,0.0667,0.0244,0.172,0.701,124.979,195210,4,no
+To Die For,Sam Smith,To Die For,62,0.482,0.361,0,-7.889,1,0.0747,0.832,4.28e-06,0.098,0.306,171.665,193795,4,no
+I Believe,Jonas Brothers,Happiness Begins,60,0.749,0.773,9,-6.227,1,0.12,0.0873,1.11e-05,0.11,0.356,99.019,217533,4,no
+What Am I,Why Don't We,What Am I,60,0.614,0.647,0,-4.681,0,0.0524,0.0687,0,0.104,0.368,163.862,184665,4,no
+It's Ok If You Forget Me,Astrid S,It's Ok If You Forget Me,59,0.562,0.379,6,-7.625,1,0.231,0.526,0,0.151,0.258,171.848,204989,4,no
+Angels Like You,Miley Cyrus,Plastic Hearts,59,0.672,0.642,5,-4.035,1,0.0313,0.0981,0,0.1,0.494,121.981,196453,4,no
+Best Part of Me (feat. YEBBA),Ed Sheeran,No.6 Collaborations Project,59,0.565,0.243,2,-8.367,1,0.0317,0.758,8.82e-06,0.285,0.239,81.655,243267,4,no
+drivers license - Spotify Singles,Lewis Capaldi,Spotify Singles,59,0.543,0.23,4,-12.532,1,0.0417,0.845,0,0.11,0.307,127.357,262544,4,no
+Swan Upon Leda,Hozier,Swan Upon Leda,59,0.313,0.403,2,-8.701,1,0.0339,0.489,0.441,0.131,0.134,62.3,222027,3,no
+Used To Love (with Dean Lewis),Martin Garrix,Used To Love (with Dean Lewis),59,0.651,0.693,4,-4.722,1,0.0375,0.458,0,0.335,0.392,118.97,236765,4,no
+The Best Is Yet to Come,Tom Walker,The Best Is Yet to Come,58,0.395,0.354,9,-7.635,1,0.0444,0.933,0,0.102,0.247,165.95,166874,4,no
+Slow Dance (feat. Ava Max),AJ Mitchell,Slow Dance (feat. Ava Max),58,0.692,0.443,1,-5.671,1,0.0386,0.214,0,0.06,0.363,127.9,178800,4,no
+if we never met,John K,if we never met,57,0.958,0.376,8,-7.063,1,0.0523,0.171,0,0.127,0.331,107.964,144427,4,no
+Incredible,James TW,Chapters,56,0.555,0.589,0,-6.209,1,0.043,0.306,0,0.147,0.264,180.937,246320,3,no
+Favourite Ex,Maisie Peters,Favourite Ex,55,0.396,0.177,5,-10.277,1,0.0378,0.718,0,0.139,0.221,177.215,201694,3,no
+Fresh Roses,Juke Ross,Fresh Roses,54,0.763,0.296,1,-10.611,0,0.0457,0.65,0,0.135,0.206,90.959,201093,4,no
+Easy,Camila Cabello,Easy,54,0.574,0.593,4,-5.731,0,0.0463,0.411,1.55e-06,0.0966,0.355,128.073,194686,4,no
+Heaven,Calum Scott,Heaven,54,0.566,0.353,2,-7.624,1,0.033,0.52,0,0.11,0.394,127.531,194141,4,no
+Every Time You Go Away,Lennon Stella,Spotify Singles,54,0.322,0.127,7,-14.197,1,0.0352,0.894,5.99e-05,0.143,0.119,144.2,265652,4,no
+Just You and I,Tom Walker,Just You and I,57,0.567,0.696,9,-5.416,1,0.301,0.456,0,0.113,0.544,92.061,174983,4,no
+gin and wine (ginuwine),tg.blk,gin and wine (ginuwine),53,0.62,0.459,5,-8.96,0,0.0413,0.515,0.0294,0.5,0.454,76.042,129474,4,no
+Dark Days [Feat. Sylvan Esso],Local Natives,Dark Days [Feat. Sylvan Esso],53,0.644,0.578,9,-7.78,1,0.0256,0.181,0.119,0.0966,0.629,114.944,181213,4,no
+Bad,James Bay,Oh My Messy Mind,53,0.549,0.413,4,-5.587,1,0.0362,0.756,0,0.0939,0.29,139.981,225920,4,no
+17,Julia Michaels,Inner Monologue Part 2,51,0.775,0.466,4,-6.805,1,0.0417,0.461,0,0.111,0.39,97.985,182800,4,no
+emily,Jeremy Zucker,brent ii,51,0.551,0.249,0,-11.392,1,0.06,0.68,0.0022,0.112,0.257,156.02,233747,3,no
+matthew,elijah woods,matthew,51,0.502,0.252,9,-12.132,1,0.0943,0.861,0,0.0866,0.123,107.188,193534,1,no
+we're not kids anymore,Cat Burns,emotionally unavailable,50,0.816,0.213,6,-12.952,0,0.0529,0.912,4.02e-06,0.0916,0.323,121.916,182958,4,no
+Unchained Melody,Lykke Li,Unchained Melody,50,0.371,0.0731,2,-8.051,1,0.0328,0.931,0,0.0717,0.316,137.466,156000,4,no
+My Heart,Christopher,Under the Surface,50,0.733,0.48,2,-5.828,1,0.0401,0.335,0,0.232,0.488,133.056,196477,3,no
+Catalonia,Vance Joy,In Our Own Sweet Time,49,0.399,0.801,4,-4.638,0,0.0544,0.32,0,0.308,0.696,199.792,218307,4,no
+can you see me?,MARO,can you see me?,49,0.656,0.465,8,-10.223,0,0.0407,0.794,0.000625,0.105,0.642,141.902,197995,4,no
+Things You Can't Change,Rhys Lewis,In Between Minds,48,0.757,0.381,1,-7.573,1,0.0381,0.578,0,0.104,0.527,84.989,199537,4,no
+LA On A Saturday Night,Hearts & Colors,LA On A Saturday Night,48,0.592,0.588,10,-4.889,1,0.0405,0.118,0,0.138,0.336,81.997,195075,4,no
+Hurts 2B Human (feat. Khalid),P!nk,Hurts 2B Human (feat. Khalid),48,0.463,0.62,7,-5.647,1,0.167,0.131,0,0.0619,0.158,83.031,202640,1,no
+I Fall in Love Too Easily,Andrew Bird,I Fall in Love Too Easily,46,0.467,0.205,5,-11.271,0,0.0445,0.82,0.00507,0.158,0.193,122.244,239293,4,no
+Beanie,Chezile,Beanie,46,0.534,0.557,5,-6.258,1,0.0252,0.405,0.0109,0.317,0.157,139.009,132160,3,no
+Make You Feel Like,Junge Junge,Make You Feel Like,46,0.794,0.635,9,-9.697,1,0.039,0.0613,0.00308,0.0962,0.35,117.995,187373,4,no
+Black Dog,Arlo Parks,Black Dog,46,0.666,0.555,1,-8.029,0,0.0362,0.697,0.0064,0.109,0.388,86.399,225454,4,no
+BAGELS,BENEE,BAGELS,46,0.221,0.443,0,-14.569,1,0.0577,0.932,0.919,0.123,0.0527,188.085,252047,3,no
+Flux,Ellie Goulding,Flux,45,0.518,0.465,0,-5.903,1,0.0273,0.834,0,0.203,0.302,93.024,229783,4,no
+Feels Like This,Maisie Peters,Dressed Too Nice For A Jacket,45,0.384,0.165,2,-9.601,1,0.0446,0.958,0,0.101,0.333,68.469,223347,4,no
+Your Other Life,Lord Huron,Long Lost (Deluxe Edition),43,0.539,0.45,0,-8.103,1,0.0278,0.322,0.618,0.105,0.37,132.004,280141,4,no
+When You Think Of Me,JP Saxe,When You Think Of Me,43,0.413,0.314,1,-10.591,1,0.0864,0.749,0,0.449,0.14,81.219,210133,4,no
+Be Real,Rasmus Faber,Be Real,43,0.786,0.581,2,-9.401,1,0.0773,0.653,0.00144,0.0693,0.687,99.995,226223,4,no
+Call You in the Morning,Tom Rosenthal,Call You in the Morning,43,0.731,0.313,7,-9.723,1,0.0389,0.952,0.00659,0.109,0.308,138.092,132309,4,no
+Thursday,Jess Glynne,Thursday,42,0.603,0.554,2,-4.381,1,0.0646,0.452,0,0.0544,0.354,111.99,216239,4,no
+Landslide,Dagny,Landslide,42,0.589,0.609,10,-7.593,1,0.053,0.625,0.000759,0.0688,0.411,149.976,179387,4,no
+You Come With The Rain,Karnaval Blues,You Come With The Rain,42,0.606,0.425,8,-10.844,1,0.142,0.653,2.55e-06,0.342,0.577,77.013,209800,4,no
+Used To,Sandro Cavazza,Used To,42,0.659,0.451,10,-8.16,1,0.032,0.278,0,0.0889,0.392,101.99,174280,4,no
+Leve,Branko,Soma,41,0.818,0.559,7,-7.639,0,0.0735,0.627,0.302,0.103,0.206,99.999,213920,4,no

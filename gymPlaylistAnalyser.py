@@ -43,7 +43,8 @@ with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
                      'Valence', 
                      'Tempo', 
                      'Duration (ms)', 
-                     'Time Signature'
+                     'Time Signature',
+                     'label'
                      ])
 
     # Write rows
@@ -64,7 +65,56 @@ with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
                          track['valence'], 
                          track['tempo'], 
                          track['duration_ms'], 
-                         track['time_signature']
+                         track['time_signature'],
+                         'yes'
                             ])
+        
+# close csv
+file.close()
+
+# The following playlist belongs to a chill playlist on Spotify, so they should'nt
+# be added to the gym playlist
+
+playlist_id = "37i9dQZF1DXdEsjhZLqzBi"
+
+tracks = sp.playlist_tracks(playlist_id)
+
+# Get the tracks audio features
+track_ids = [track['track']['id'] for track in tracks['items']]
+
+audio_features = sp.audio_features(track_ids)
+
+# join tracks list with audio_features list
+for track, audio_feature in zip(tracks['items'], audio_features):
+    track.update(audio_feature)
+
+# Open CSV file for writing
+with open(csv_file, mode='a', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    
+    # Write rows
+    for track in tracks['items']:
+        writer.writerow([track['track']['name'], 
+                         track['track']['artists'][0]['name'], 
+                         track['track']['album']['name'], 
+                         track['track']['popularity'], 
+                         track['danceability'], 
+                         track['energy'], 
+                         track['key'], 
+                         track['loudness'], 
+                         track['mode'], 
+                         track['speechiness'], 
+                         track['acousticness'], 
+                         track['instrumentalness'], 
+                         track['liveness'], 
+                         track['valence'], 
+                         track['tempo'], 
+                         track['duration_ms'], 
+                         track['time_signature'],
+                         'no'
+                            ])
+
+# close csv
+file.close()
 
 print(f'Track information has been written to {csv_file}')
