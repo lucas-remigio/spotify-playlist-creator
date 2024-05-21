@@ -1,11 +1,12 @@
 import { useToken } from './TokenContext'
 import axios from 'axios'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
-  const { token } = useToken()
+  let { token } = useToken()
+  let storedToken = useRef(null)
   const { id } = useParams()
 
   const fetchTracks = useCallback(async () => {
@@ -25,6 +26,7 @@ export default function Tracks() {
       fetchTracks()
     } else {
       console.log('no token')
+      storedToken.current = window.localStorage.getItem('token')
     }
   }, [token, fetchTracks])
 
@@ -43,7 +45,11 @@ export default function Tracks() {
           {tracks.map((track) => (
             <tr key={track.track.id}>
               <td>
-                <img src={track.track.album.images[0]?.url} alt={track.track.album.name} width="50" />
+                <img
+                  src={track.track.album.images[0]?.url}
+                  alt={track.track.album.name}
+                  width="50"
+                />
               </td>
               <td>{track.track.name}</td>
               <td>{track.track.artists.map((artist) => artist.name).join(', ')}</td>
