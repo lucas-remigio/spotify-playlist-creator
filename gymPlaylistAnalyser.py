@@ -5,6 +5,7 @@ import csv
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="455e44d248cd4522a12e519b7a75ea89",
                                                            client_secret="faea6469548c4785be19cdd2545349b3"))
 
+# The following playlist belongs to LockedIn, an hiphop gym playlist on Spotify
 playlist_id = "37i9dQZF1DWTl4y3vgJOXW"
 
 tracks = sp.playlist_tracks(playlist_id)
@@ -26,10 +27,44 @@ with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     
     # Write header
-    writer.writerow(['Track Name', 'Artist', 'Album', 'Release Date', 'Popularity', 'Danceability', 'Energy', 'Key', 'Loudness', 'Mode', 'Speechiness', 'Acousticness', 'Instrumentalness', 'Liveness', 'Valence', 'Tempo', 'Duration (ms)', 'Time Signature'])
+    writer.writerow(['Track Name', 
+                     'Artist', 
+                     'Album', 
+                     'Popularity', 
+                     'Danceability', 
+                     'Energy', 
+                     'Key', 
+                     'Loudness', 
+                     'Mode', 
+                     'Speechiness', 
+                     'Acousticness', 
+                     'Instrumentalness', 
+                     'Liveness', 
+                     'Valence', 
+                     'Tempo', 
+                     'Duration (ms)', 
+                     'Time Signature'
+                     ])
 
     # Write rows
     for track in tracks['items']:
-        writer.writerow([track['track']['name'], track['track']['artists'][0]['name'], track['track']['album']['name'], track['track']['album']['release_date'], track['track']['popularity'], track['danceability'], track['energy'], track['key'], track['loudness'], track['mode'], track['speechiness'], track['acousticness'], track['instrumentalness'], track['liveness'], track['valence'], track['tempo'], track['duration_ms'], track['time_signature']])
+        writer.writerow([track['track']['name'], 
+                         track['track']['artists'][0]['name'], 
+                         track['track']['album']['name'], 
+                         track['track']['popularity'], 
+                         track['danceability'], 
+                         track['energy'], 
+                         track['key'], 
+                         track['loudness'], 
+                         track['mode'], 
+                         track['speechiness'], 
+                         track['acousticness'], 
+                         track['instrumentalness'], 
+                         track['liveness'], 
+                         track['valence'], 
+                         track['tempo'], 
+                         track['duration_ms'], 
+                         track['time_signature']
+                            ])
 
 print(f'Track information has been written to {csv_file}')
