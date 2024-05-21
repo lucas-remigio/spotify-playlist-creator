@@ -1,6 +1,8 @@
 import './App.css'
 import { useEffect, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useToken } from './TokenContext'
 
 function App() {
   const CLIENT_ID = '455e44d248cd4522a12e519b7a75ea89'
@@ -8,11 +10,11 @@ function App() {
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
   const RESPONSE_TYPE = 'token'
 
-  const [token, setToken] = useState('')
+  const { token, setToken } = useToken()
   const [playlists, setPlaylists] = useState([])
-  const [selectedPlaylistId, setSelectedPlaylistId] = useState(null)
 
   const GetUserPlaylists = useCallback(async () => {
+    if (!token) return
     try {
       const response = await axios.get('https://api.spotify.com/v1/me/playlists', {
         headers: {
@@ -27,6 +29,7 @@ function App() {
   }, [token])
 
   const getProfile = useCallback(async () => {
+    if (!token) return
     try {
       const profile = await axios.get('https://api.spotify.com/v1/me', {
         headers: {
@@ -38,10 +41,6 @@ function App() {
       console.error('Error fetching profile:', error)
     }
   }, [token])
-
-  const handlePlaylistSelect = (playlistId) => {
-    setSelectedPlaylistId(playlistId)
-  }
 
   useEffect(() => {
     const hash = window.location.hash
@@ -59,7 +58,7 @@ function App() {
     }
 
     setToken(storedToken)
-  }, [])
+  }, [setToken])
 
   useEffect(() => {
     if (token) {
@@ -92,15 +91,17 @@ function App() {
               <ul className="playlist-container">
                 {playlists.map((playlist) => (
                   <li key={playlist.id} className="playlist-card">
-                    <div className="playlist-content">
-                      <img
-                        src={playlist.images[0].url}
-                        alt={playlist.name}
-                        className="playlist-image"
-                      />
-                      <h3 className="playlist-name">{playlist.name}</h3>
-                      <button onClick={() => handlePlaylistSelect(playlist.id)}>Select</button>
-                    </div>
+                    <Link to={`playlist/${playlist.id}`}>
+                      <div className="playlist-content">
+                        <img
+                          src={playlist.images[0].url}
+                          alt={playlist.name}
+                          className="playlist-image"
+                        />
+                        <h3 className="playlist-name">{playlist.name}</h3>
+                        Select
+                      </div>
+                    </Link>
                   </li>
                 ))}
               </ul>
