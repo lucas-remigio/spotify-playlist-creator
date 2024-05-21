@@ -1,8 +1,7 @@
 import './App.css'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useToken } from './TokenContext'
 import Swal from 'sweetalert2'
 
 function App() {
@@ -15,23 +14,52 @@ function App() {
   const SCOPE =
     'playlist-modify-public playlist-modify-private playlist-read-private user-read-email user-read-private'
 
-  const { token, setToken } = useToken()
+  const [token, setToken] = useState(null)
   const [playlists, setPlaylists] = useState([])
+  let user_id = useRef(null)
 
-  const FetchPlaylists = useCallback(async () => {
+  const fetchPlaylists = useCallback(async () => {
     if (!token) return
+
+    let allPlaylists = []
+    let offset = 0
+    const limit = 50
+    let totalItems = 0
+
     try {
-      const response = await axios.get('https://api.spotify.com/v1/me/playlists', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      setPlaylists(response.data.items)
-      console.log(response.data.items)
+      do {
+        const response = await axios.get('https://api.spotify.com/v1/me/playlists', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            limit,
+            offset,
+          },
+        })
+
+        allPlaylists = allPlaylists.concat(response.data.items)
+        offset += limit
+        if (!totalItems) {
+          totalItems = response.data.total
+        }
+
+      } while (allPlaylists.length < totalItems)
+
+      console.log('All playlists:', allPlaylists)
+      return allPlaylists
+
     } catch (error) {
       console.error('Error fetching playlists:', error)
     }
   }, [token])
+
+  const fetchMyPlaylists = useCallback(async () => {
+    let playlists = await fetchPlaylists()
+    let myPlaylists = playlists.filter((playlist) => playlist.owner.id === user_id.current)
+    console.log('My playlists:', myPlaylists)
+    setPlaylists(myPlaylists)
+  }, [fetchPlaylists])
 
   const getProfile = useCallback(async () => {
     if (!token) return
@@ -42,6 +70,7 @@ function App() {
         },
       })
       console.log(profile.data)
+      user_id.current = profile.data.id
     } catch (error) {
       console.error('Error fetching profile:', error)
     }
@@ -69,9 +98,9 @@ function App() {
   useEffect(() => {
     if (token) {
       getProfile()
-      FetchPlaylists()
+      fetchMyPlaylists()
     }
-  }, [token, getProfile, FetchPlaylists])
+  }, [token, getProfile, fetchMyPlaylists])
 
   const logout = () => {
     setToken('')
@@ -94,7 +123,7 @@ function App() {
           },
         })
 
-        FetchPlaylists()
+        fetchPlaylists()
       } catch (error) {
         console.error('Error unfollowing playlist:', error)
       }
