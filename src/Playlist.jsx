@@ -8,17 +8,18 @@ export default function Tracks() {
   let storedToken = useRef(null)
   const { id } = useParams()
   let loading = useRef(true)
+  let totalItems = useRef(0)
 
   const fetchTracks = useCallback(async () => {
     if (!id || !storedToken.current) return
 
     let offset = 0 // Initial offset
-    const limit = 50 // Number of items to fetch per request
+    const limit = 100 // Number of items to fetch per request
     let allTracks = [] // Array to store all tracks
     loading.current = true
 
     try {
-      let totalItems = 0
+      totalItems.current = 0
       let fetchedItems = 0
 
       do {
@@ -36,11 +37,13 @@ export default function Tracks() {
         allTracks = allTracks.concat(items)
 
         fetchedItems += items.length
-        totalItems = response.data.total
+        if (!totalItems.current) {
+          totalItems.current = response.data.total
+        }
 
         // Increment the offset for the next request
         offset += limit
-      } while (fetchedItems < totalItems)
+      } while (fetchedItems < totalItems.current)
 
       setTracks(allTracks)
       console.log('All tracks:', allTracks)
@@ -72,7 +75,7 @@ export default function Tracks() {
   }
 
   const filterGymMusicsFromTracks = async () => {
-    let tracksToFilter = await getTrackAnalisys()
+    let tracksToFilter = await getTrackAnalysis()
 
     // To do that we need to check the following features:
     /* 
@@ -107,22 +110,40 @@ export default function Tracks() {
     return gymMusics
   }
 
-  const getTrackAnalisys = async () => {
-    // First we need to get the musics in the playlist and their corresponding analysis
-    // Then we need to filter the musics that are in the gym style
-    // Finally we need to create a new playlist with the musics that are in the gym style
+  const getTrackAnalysis = async () => {
     try {
       const tracksIds = tracks.map((track) => track.track.id)
       console.log('tracksIds ', tracksIds)
-      const response = await axios.get(
-        `https://api.spotify.com/v1/audio-features?ids=${tracksIds.join(',')}`,
-        {
-          headers: {
-            Authorization: `Bearer ${storedToken.current}`,
-          },
+
+      const fetchChunk = async (ids) => {
+        const response = await axios.get(
+          `https://api.spotify.com/v1/audio-features?ids=${ids.join(',')}`,
+          {
+            headers: {
+              Authorization: `Bearer ${storedToken.current}`,
+            },
+          }
+        )
+        return response.data.audio_features
+      }
+
+      // Function to split array into chunks
+      const chunkArray = (array, size) => {
+        const result = []
+        for (let i = 0; i < array.length; i += size) {
+          result.push(array.slice(i, i + size))
         }
-      )
-      return response.data.audio_features
+        return result
+      }
+
+      // Split track IDs into chunks of 100
+      const chunks = chunkArray(tracksIds, 100)
+      const promises = chunks.map((chunk) => fetchChunk(chunk))
+      const results = await Promise.all(promises)
+
+      // Flatten the results array
+      const audioFeatures = results.flat()
+      return audioFeatures
     } catch (error) {
       console.error('Error fetching track analysis:', error)
     }
@@ -151,17 +172,29 @@ export default function Tracks() {
 
       const playlistId = response.data.id
 
-      await axios.post(
-        `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
-        {
-          uris: gymMusics.map((track) => track.uri),
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${storedToken.current}`,
-          },
+      // Function to add tracks to the playlist in chunks of 100
+      const addTracksToPlaylist = async (playlistId, trackUris) => {
+        const chunkSize = 100
+
+        for (let i = 0; i < trackUris.length; i += chunkSize) {
+          const chunk = trackUris.slice(i, i + chunkSize)
+          await axios.post(
+            `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+            {
+              uris: chunk,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${storedToken.current}`,
+              },
+            }
+          )
         }
-      )
+      }
+
+      // Extract track URIs and add them to the playlist
+      const trackUris = gymMusics.map((track) => track.uri)
+      await addTracksToPlaylist(playlistId, trackUris)
 
       console.log('Created Gym Playlist:', response.data)
     } catch (error) {
@@ -193,7 +226,7 @@ export default function Tracks() {
               <tr key={track.track.id}>
                 <td>
                   <img
-                    src={track.track.album.images[0]?.url}
+                    src={track.track.album.images[2]?.url}
                     alt={track.track.album.name}
                     width="50"
                   />
