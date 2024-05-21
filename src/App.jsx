@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useToken } from './TokenContext'
+import Swal from 'sweetalert2'
 
 function App() {
   const CLIENT_ID = '455e44d248cd4522a12e519b7a75ea89'
@@ -84,19 +85,41 @@ function App() {
   }
 
   const deletePlaylist = async (id) => {
-
     // stop following the playlist
-    try {
-      await axios.delete(`https://api.spotify.com/v1/playlists/${id}/followers`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-    } catch (error) {
-      console.error('Error unfollowing playlist:', error)
+    const unfollow = async (id) => {
+      try {
+        await axios.delete(`https://api.spotify.com/v1/playlists/${id}/followers`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+
+        FetchPlaylists()
+      } catch (error) {
+        console.error('Error unfollowing playlist:', error)
+      }
     }
 
-    FetchPlaylists()
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        unfollow(id)
+        Swal.fire({
+          title: 'Deleted!',
+          text: 'Your playlist has been deleted.',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      }
+    })
   }
 
   return (

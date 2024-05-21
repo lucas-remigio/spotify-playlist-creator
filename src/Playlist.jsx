@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import LoadingIcon from './LoadingIcon.jsx'
+import Swal from 'sweetalert2'
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
@@ -195,6 +196,14 @@ export default function Tracks() {
       // Extract track URIs and add them to the playlist
       const trackUris = gymMusics.map((track) => track.uri)
       await addTracksToPlaylist(playlistId, trackUris)
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: 'Your playlist has been created',
+        showConfirmButton: false,
+        timer: 1500,
+      })
 
       console.log('Created Gym Playlist:', response.data)
     } catch (error) {
