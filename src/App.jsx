@@ -16,6 +16,8 @@ function App() {
 
   const [token, setToken] = useState(null)
   const [playlists, setPlaylists] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchedPlaylists, setSearchedPlaylists] = useState([])
   let user_id = useRef(null)
 
   const fetchPlaylists = useCallback(async () => {
@@ -43,12 +45,10 @@ function App() {
         if (!totalItems) {
           totalItems = response.data.total
         }
-
       } while (allPlaylists.length < totalItems)
 
       console.log('All playlists:', allPlaylists)
       return allPlaylists
-
     } catch (error) {
       console.error('Error fetching playlists:', error)
     }
@@ -113,6 +113,50 @@ function App() {
     window.location.href = loginUrl
   }
 
+  const searchPlaylists = useCallback(
+    async (term) => {
+      if (!token) return
+
+      try {
+        const response = await axios.get('https://api.spotify.com/v1/search', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            q: term,
+            type: 'playlist',
+          },
+        })
+
+        setSearchedPlaylists(response.data.playlists.items)
+        console.log('Searched playlists:', response.data.playlists.items)
+      } catch (error) {
+        console.error('Error fetching playlists:', error)
+      }
+    },
+    [token]
+  )
+
+  useEffect(() => {
+    if (searchTerm) {
+      const handler = setTimeout(() => {
+        searchPlaylists(searchTerm);
+      }, 500);
+
+      return () => clearTimeout(handler);
+    } else {
+      setSearchedPlaylists([]);
+    }
+  }, [searchTerm, searchPlaylists]);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value)
+  }
+
+  const handleSearchClick = () => {
+    searchPlaylists(searchTerm)
+  }
+
   const deletePlaylist = async (id) => {
     // stop following the playlist
     const unfollow = async (id) => {
@@ -151,6 +195,8 @@ function App() {
     })
   }
 
+  const displayedPlaylists = searchedPlaylists.length > 0 ? searchedPlaylists : playlists;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -161,9 +207,17 @@ function App() {
           <>
             <button onClick={logout}>Logout</button>
             <div>
-              <h2>My Playlists:</h2>
+              <input
+                type="text"
+                placeholder="Search for a playlist..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="search-input"
+              />
+              <button onClick={handleSearchClick}>Search</button>
+              <h2>{searchTerm ? 'Playlist Results' : 'My Playlists'}</h2>
               <ul className="playlist-container">
-                {playlists.map((playlist) => (
+                {displayedPlaylists.map((playlist) => (
                   <li key={playlist.id} className="playlist-card">
                     <Link to={`playlist/${playlist.id}`}>
                       <div className="playlist-content">

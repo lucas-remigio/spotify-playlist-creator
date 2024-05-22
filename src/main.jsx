@@ -5,7 +5,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import ErrorPage from './error-page.jsx'
 import Playlist from './Playlist.jsx'
-import { TokenProvider } from './TokenContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,8 +22,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <TokenProvider>
       <RouterProvider router={router} />
-    </TokenProvider>
   </React.StrictMode>
 )
