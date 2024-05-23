@@ -3,6 +3,8 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import trashicon from './assets/trash-icon.svg'
+import Navbar from './Navbar.jsx'
 
 function App() {
   const CLIENT_ID = '455e44d248cd4522a12e519b7a75ea89'
@@ -140,14 +142,14 @@ function App() {
   useEffect(() => {
     if (searchTerm) {
       const handler = setTimeout(() => {
-        searchPlaylists(searchTerm);
-      }, 500);
+        searchPlaylists(searchTerm)
+      }, 500)
 
-      return () => clearTimeout(handler);
+      return () => clearTimeout(handler)
     } else {
-      setSearchedPlaylists([]);
+      setSearchedPlaylists([])
     }
-  }, [searchTerm, searchPlaylists]);
+  }, [searchTerm, searchPlaylists])
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value)
@@ -195,17 +197,12 @@ function App() {
     })
   }
 
-  const displayedPlaylists = searchedPlaylists.length > 0 ? searchedPlaylists : playlists;
+  const displayedPlaylists = searchedPlaylists.length > 0 ? searchedPlaylists : playlists
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Spotify React</h1>
-        {!token ? (
-          <button onClick={login}>Login to Spotify</button>
-        ) : (
-          <>
-            <button onClick={logout}>Logout</button>
+        <Navbar token={token} login={login} logout={logout} />
             <div>
               <input
                 type="text"
@@ -219,7 +216,7 @@ function App() {
               <ul className="playlist-container">
                 {displayedPlaylists.map((playlist) => (
                   <li key={playlist.id} className="playlist-card">
-                    <Link to={`playlist/${playlist.id}`}>
+                    <Link to={`playlist/${playlist.id}`} className="no-underline">
                       <div className="playlist-content">
                         {playlist.images && playlist.images.length > 0 ? (
                           <img
@@ -231,16 +228,20 @@ function App() {
                           <div className="no-image-placeholder">No Image Available</div>
                         )}
                         <h3 className="playlist-name">{playlist.name}</h3>
-                        Select
+                        {searchTerm ? (
+                          <div className="playlist-owner">By {playlist.owner.display_name}</div>
+                        ) : (
+                          ''
+                        )}
                       </div>
                     </Link>
-                    <button onClick={() => deletePlaylist(playlist.id)}>Delete</button>
+                    <button className="trash-button" onClick={() => deletePlaylist(playlist.id)}>
+                      <img src={trashicon} alt="Delete" width={20} height={20} />
+                    </button>
                   </li>
                 ))}
               </ul>
             </div>
-          </>
-        )}
       </header>
     </div>
   )

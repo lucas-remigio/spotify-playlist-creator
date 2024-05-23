@@ -40,3 +40,66 @@
 .read-the-docs {
   color: #888;
 }
+
+.no-underline {
+  text-decoration: none;
+  color: inherit; /* Ensure it inherits color so the text color remains unchanged */
+}
+
+/* Add styles for playlist card and trash button */
+.playlist-card {
+  position: relative; /* Make the playlist card a positioned element */
+  padding: 10px; /* Add some padding if needed */
+  border: 1px solid #ccc; /* Optional: Add border for visual separation */
+  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.trash-button {
+  position: absolute; /* Position the button absolutely within the card */
+  top: 10px; /* Position from the top */
+  left: 10px; /* Position from the left */
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 0; /* Remove default button padding */
+}
+
+.no-underline {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+}
+
+/* Additional styles if needed */
+.playlist-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.playlist-image {
+  max-width: 100%;
+  border-radius: 40px; /* Optional: Add border radius to image */
+}
+
+.no-image-placeholder {
+  width: 100%;
+  height: 150px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 4px; /* Optional: Add border radius to placeholder */
+}
+
+.playlist-name {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.playlist-owner {
+  font-size: 0.9em;
+  color: #888;
+}
