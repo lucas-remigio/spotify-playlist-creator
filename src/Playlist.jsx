@@ -3,9 +3,12 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import LoadingIcon from './LoadingIcon.jsx'
 import Swal from 'sweetalert2'
+import './Playlist.css'
+
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
+  const [playlistDetails, setPlaylistDetails] = useState(null)
   let storedToken = useRef(null)
   const { id } = useParams()
   let loading = useRef(true)
@@ -33,6 +36,14 @@ export default function Tracks() {
             offset,
           },
         })
+
+        // Fetch playlist details
+        const playlistResponse = await axios.get(`https://api.spotify.com/v1/playlists/${id}`, {
+          headers: {
+            Authorization: `Bearer ${storedToken.current}`,
+          },
+        })
+        setPlaylistDetails(playlistResponse.data)
 
         const items = response.data.items
         allTracks = allTracks.concat(items)
@@ -212,41 +223,61 @@ export default function Tracks() {
   }
 
   return (
-    <div id="tracks">
-      <button onClick={filterGymMusicsFromTracks}>Filter Gym Music</button>
-      <button onClick={createGymPlaylist}>Create Gym Playlist</button>
-      <h1>All Tracks</h1>
-      {loading.current ? ( // Conditionally render loading icon if loading is true
-        <div>
-          <LoadingIcon />
-          <p>Loading...</p>
+    <div id="tracks" style={{ display: 'flex' }}>
+      {playlistDetails && (
+        <div className="playlist-details" style={{ marginRight: '20px', width: '300px' }}>
+          <div className="card">
+            <img
+              src={playlistDetails.images[0]?.url}
+              alt={playlistDetails.name}
+              style={{ width: '100%' }}
+            />
+            <div className="card-body">
+              <h2>{playlistDetails.name}</h2>
+              <p>{playlistDetails.description}</p>
+              <p>
+                <strong>Tracks:</strong> {playlistDetails.tracks.total}
+              </p>
+            </div>
+          </div>
         </div>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Cover</th>
-              <th>Name</th>
-              <th>Artists</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tracks.map((track) => (
-              <tr key={track.track.id}>
-                <td>
-                  <img
-                    src={track.track.album.images[2]?.url}
-                    alt={track.track.album.name}
-                    width="50"
-                  />
-                </td>
-                <td>{track.track.name}</td>
-                <td>{track.track.artists.map((artist) => artist.name).join(', ')}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       )}
+      <div style={{ flex: 1 }}>
+        <button onClick={filterGymMusicsFromTracks}>Filter Gym Music</button>
+        <button onClick={createGymPlaylist}>Create Gym Playlist</button>
+        <h1>All Tracks</h1>
+        {loading.current ? ( // Conditionally render loading icon if loading is true
+          <div>
+            <LoadingIcon />
+            <p>Loading...</p>
+          </div>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Cover</th>
+                <th>Name</th>
+                <th>Artists</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tracks.map((track) => (
+                <tr key={track.track.id}>
+                  <td>
+                    <img
+                      src={track.track.album.images[2]?.url}
+                      alt={track.track.album.name}
+                      width="50"
+                    />
+                  </td>
+                  <td>{track.track.name}</td>
+                  <td>{track.track.artists.map((artist) => artist.name).join(', ')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   )
 }

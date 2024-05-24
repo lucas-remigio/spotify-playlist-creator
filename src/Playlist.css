@@ -1,0 +1,27 @@
+#tracks {
+    display: flex;
+}
+
+.playlist-details .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.playlist-details .card img {
+    width: 100%;
+    height: auto;
+}
+
+.playlist-details .card-body {
+    padding: 16px;
+}
+
+.playlist-details .card-body h2 {
+    margin: 0 0 8px;
+}
+
+.playlist-details .card-body p {
+    margin: 4px 0;
+}
