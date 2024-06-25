@@ -203,45 +203,45 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar token={token} login={login} logout={logout} />
-            <div>
-              <input
-                type="text"
-                placeholder="Search for a playlist..."
-                value={searchTerm}
-                onChange={handleSearchChange}
-                className="search-input"
-              />
-              <button onClick={handleSearchClick}>Search</button>
-              <h2>{searchTerm ? 'Playlist Results' : 'My Playlists'}</h2>
-              <ul className="playlist-container">
-                {displayedPlaylists.map((playlist) => (
-                  <li key={playlist.id} className="playlist-card">
-                    <Link to={`playlist/${playlist.id}`} className="no-underline">
-                      <div className="playlist-content">
-                        {playlist.images && playlist.images.length > 0 ? (
-                          <img
-                            src={playlist.images[0].url}
-                            alt={playlist.name}
-                            className="playlist-image"
-                          />
-                        ) : (
-                          <div className="no-image-placeholder">No Image Available</div>
-                        )}
-                        <h3 className="playlist-name">{playlist.name}</h3>
-                        {searchTerm ? (
-                          <div className="playlist-owner">By {playlist.owner.display_name}</div>
-                        ) : (
-                          ''
-                        )}
-                      </div>
-                    </Link>
-                    <button className="trash-button" onClick={() => deletePlaylist(playlist.id)}>
-                      <img src={trashicon} alt="Delete" width={20} height={20} />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Search for a playlist..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+          <button onClick={handleSearchClick}>Search</button>
+          <h2>{searchTerm ? 'Playlist Results' : 'My Playlists'}</h2>
+          <ul className="playlist-container">
+            {displayedPlaylists.map((playlist) => (
+              <li key={playlist.id} className="playlist-card">
+                <Link to={`playlist/${playlist.id}`} className="no-underline">
+                  <div className="playlist-content">
+                    {playlist.images && playlist.images.length > 0 ? (
+                      <img
+                        src={playlist.images[0].url}
+                        alt={playlist.name}
+                        className="playlist-image"
+                      />
+                    ) : (
+                      <div className="no-image-placeholder">No Image Available</div>
+                    )}
+                    <h3 className="playlist-name">{playlist.name}</h3>
+                    {searchTerm ? (
+                      <div className="playlist-owner">By {playlist.owner.display_name}</div>
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                </Link>
+                <button className="trash-button" onClick={() => deletePlaylist(playlist.id)}>
+                  <img src={trashicon} alt="Delete" width={20} height={20} />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </header>
     </div>
   )

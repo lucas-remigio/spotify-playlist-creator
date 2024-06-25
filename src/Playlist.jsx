@@ -17,6 +17,14 @@ export default function Tracks() {
   const fetchTracks = useCallback(async () => {
     if (!id || !storedToken.current) return
 
+    // Fetch playlist details
+    const playlistResponse = await axios.get(`https://api.spotify.com/v1/playlists/${id}`, {
+      headers: {
+        Authorization: `Bearer ${storedToken.current}`,
+      },
+    })
+    setPlaylistDetails(playlistResponse.data)
+
     let offset = 0 // Initial offset
     const limit = 100 // Number of items to fetch per request
     let allTracks = [] // Array to store all tracks
@@ -36,14 +44,6 @@ export default function Tracks() {
             offset,
           },
         })
-
-        // Fetch playlist details
-        const playlistResponse = await axios.get(`https://api.spotify.com/v1/playlists/${id}`, {
-          headers: {
-            Authorization: `Bearer ${storedToken.current}`,
-          },
-        })
-        setPlaylistDetails(playlistResponse.data)
 
         const items = response.data.items
         allTracks = allTracks.concat(items)
