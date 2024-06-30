@@ -5,17 +5,17 @@ import LoadingIcon from './LoadingIcon.jsx'
 import Swal from 'sweetalert2'
 import './Playlist.css'
 
-
 export default function Tracks() {
   const [tracks, setTracks] = useState([])
   const [playlistDetails, setPlaylistDetails] = useState(null)
   let storedToken = useRef(null)
   const { id } = useParams()
   let loading = useRef(true)
-  let totalItems = useRef(0)
 
   const fetchTracks = useCallback(async () => {
     if (!id || !storedToken.current) return
+
+    loading.current = true
 
     // Fetch playlist details
     const playlistResponse = await axios.get(`https://api.spotify.com/v1/playlists/${id}`, {
@@ -25,42 +25,33 @@ export default function Tracks() {
     })
     setPlaylistDetails(playlistResponse.data)
 
-    let offset = 0 // Initial offset
+    let playlistTotal = playlistResponse.data.tracks.total
+    let numRequests = Math.ceil(playlistTotal / 100)
     const limit = 100 // Number of items to fetch per request
-    let allTracks = [] // Array to store all tracks
-    loading.current = true
+
+    let requests = []
+    for (let i = 0; i < numRequests; i++) {
+      let offset = i * limit
+      let request = axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
+        headers: {
+          Authorization: `Bearer ${storedToken.current}`,
+        },
+        params: {
+          limit,
+          offset,
+        },
+      })
+      requests.push(request)
+    }
 
     try {
-      totalItems.current = 0
-      let fetchedItems = 0
-
-      do {
-        const response = await axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
-          headers: {
-            Authorization: `Bearer ${storedToken.current}`,
-          },
-          params: {
-            limit,
-            offset,
-          },
-        })
-
-        const items = response.data.items
-        allTracks = allTracks.concat(items)
-
-        fetchedItems += items.length
-        if (!totalItems.current) {
-          totalItems.current = response.data.total
-        }
-
-        // Increment the offset for the next request
-        offset += limit
-      } while (fetchedItems < totalItems.current)
+      let responses = await Promise.all(requests)
+      const allTracks = responses.reduce((acc, response) => acc.concat(response.data.items), [])
 
       setTracks(allTracks)
-      console.log('All tracks:', allTracks)
-    } catch (error) {
-      console.error('Error fetching tracks:', error)
+      console.log(allTracks)
+    } catch (e) {
+      console.log('error')
     }
 
     loading.current = false
